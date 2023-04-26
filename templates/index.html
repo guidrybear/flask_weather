@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Weather App</title>
+    <style>
+    body {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        flex-direction: column;
+        background-image: url('/static/clouds.jpg');
+        background-size: cover;
+    }
+    h1 {
+        text-align: center;
+    }
+            input[type="text"] {
+            width: 300px;
+            height: 30px;
+            padding: 5px;
+            font-size: 16px;
+        }
+
+        input[type="submit"] {
+            height: 30px;
+            padding: 5px 10px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .my-image {
+  margin-right: 10px; /* Add 10px margin to the right of the image */
+  padding-left: 10px;
+}
+p {
+font-weight: bold;
+font-family: fantasy;
+}
+</style>
+</head>
+<body>
+    <h1>Weather App</h1>
+    <form method="POST" action="{{ url_for('result') }}">
+        <label for="city">Enter City:</label>
+         <input type="text" name="city" id="city" placeholder="Enter city name">
+        <input type="submit" value="Get Weather">
+    </form>
+<p>
+  Look for your city and check the weather so, you know what to expect
+    <br>
+  <img class="my-image" src="{{ url_for('static', filename='/rain.jpg') }}"
+       alt="My Image" style="width: 100px; height: 100px;">
+    <img class="my-image" src="{{ url_for('static', filename='/dark_clouds.jpg') }}"
+         alt="My Image" style="width: 100px; height: 100px;">
+    <img class="my-image" src="{{ url_for('static', filename='/snow.jpg') }}"
+         alt="My Image" style="width: 100px; height: 100px;">
+    <img class="my-image" src="{{ url_for('static', filename='/clear_sky.jpg') }}"
+         alt="My Image" style="width: 100px; height: 100px;">
+</p>
+</body>
+</html>
